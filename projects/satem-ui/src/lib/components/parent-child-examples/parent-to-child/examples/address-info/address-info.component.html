@@ -1,0 +1,11 @@
+<form class="form" [formGroup]="addressFormGroup">
+
+    <div class="form-element">
+        <mat-form-field>
+            <input matInput placeholder="country" required [(ngModel)]="model.country" formControlName="country">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="city" [(ngModel)]="model.city" formControlName="city">
+        </mat-form-field>
+    </div>
+</form>

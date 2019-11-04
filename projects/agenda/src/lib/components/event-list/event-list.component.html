@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <div *ngFor="let event of (events$ | async)">
+        <lib-event-info [value]="event"></lib-event-info>
+      </div>
+    </div>
+    <div class="col-md-3">
+
+
+    </div>
+  </div>
+  <button (click)="btnAddClick()" class="btn btn-primary">{{ 'BTN_ADD' | translate}}</button>
+</div>
+
+
+
+
+<ng-template #eventModalBody>
+  <div class="modal-body">
+    <div class="md-form mb-5">
+      <input type="text" id="time" class="form-control" matInput [formControl]="timeInput" />
+      <label for="time">Time</label>
+    </div>
+
+    <div class="md-form">
+      <input type="text" id="subject" class="form-control" matInput [formControl]="subjectInput" />
+      <label for="subject">Subject</label>
+    </div>
+
+    <div class="md-form mb-5">
+      <input type="text" id="location" class="form-control" matInput [formControl]="locationInput" />
+      <label for="location">Location (optional) </label>
+    </div>
+
+    <div class="md-form">
+
+      <input type="text" id="description" class="form-control" matInput [formControl]="descriptionInput" />
+      <label for="description">Description (optional) </label>
+    </div>
+  </div>
+</ng-template>

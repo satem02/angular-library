@@ -1,0 +1,24 @@
+<div class="mat-app-background">
+
+  <mat-horizontal-stepper labelPosition="bottom" (selectionChange)="onStepChange($event)"  [linear]="true" #stepper>
+
+    <mat-step [stepControl]="stepControlMoneyRequest" [completed]="false"  [editable]="false">
+      <ng-template matStepLabel>{{ 'STEP.REQUEST' | translate}}</ng-template>
+      <satem-ui-money-request [myStepper]="stepper"></satem-ui-money-request>
+    </mat-step>
+    <!--  [editable]="false"  bu ıcondan step gecıslerını engeller -->
+    <!--  [completed]="false"  herhangibi bir stepe geçiş için kullanılabilir -->
+    <mat-step [stepControl]="stepControlMoneyDetail" [completed]="false"  [editable]="false">
+      <ng-template matStepLabel>{{ 'STEP.DETAIL' | translate}}</ng-template>
+      <satem-ui-money-detail [myStepper]="stepper"></satem-ui-money-detail>
+    </mat-step>
+
+    <mat-step [stepControl]="stepControlMoneyApprove" [completed]="false"  [editable]="false">
+      <ng-template matStepLabel>{{ 'STEP.APPROVE' | translate}}</ng-template>
+      <satem-ui-money-approve [myStepper]="stepper"></satem-ui-money-approve>
+    </mat-step>
+
+
+  </mat-horizontal-stepper>
+
+</div>

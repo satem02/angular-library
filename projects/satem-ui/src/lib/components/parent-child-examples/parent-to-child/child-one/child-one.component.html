@@ -1,0 +1,11 @@
+<form class="form" [formGroup]="childOneFormGroup">
+
+    <div class="form-element">
+        <mat-form-field>
+            <input matInput placeholder="Mail" required [(ngModel)]="model.mail" formControlName="mail">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Phone" [(ngModel)]="model.phone" formControlName="phone">
+        </mat-form-field>
+    </div>
+</form>

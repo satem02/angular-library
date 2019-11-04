@@ -1,0 +1,11 @@
+{
+    "BTN": {
+        "NEXT": "İleri",
+        "BACK": "Geri"
+    },
+    "STEP": {
+        "REQUEST": "Para Transferi",
+        "DETAIL": "Para Transferi Detayı",
+        "APPROVE": "Para Transferi Onaylama"
+    }
+}

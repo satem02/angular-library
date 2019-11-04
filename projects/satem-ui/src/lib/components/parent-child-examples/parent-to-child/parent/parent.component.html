@@ -1,0 +1,29 @@
+<div class="groupForm">
+    <div class="groupFormTitle">{{ 'STEP.REQUEST' | translate}}
+    </div>
+    <div class="container">
+        <form class="form" [formGroup]="parentFormGroup">
+
+            <div class="form-element">
+                <mat-form-field>
+                    <input matInput placeholder="Name" required [(ngModel)]="model.name" formControlName="name">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Sur Name" [(ngModel)]="model.surName" formControlName="surName">
+                </mat-form-field>
+            </div>
+
+            <satem-ui-child-one [childPropertyName]="'contact'" [parentFormGroup]="parentFormGroup"></satem-ui-child-one>
+            <satem-ui-child-two [childPropertyName]="'address'" [parentFormGroup]="parentFormGroup"></satem-ui-child-two>
+
+            <div class="form-element">
+                <button class="btn btn-primary" [disabled]="!parentFormGroup.valid"
+                    (click)="nextButtonClicked()">{{ 'BTN.NEXT' | translate}}</button>
+            </div>
+        </form>
+
+    </div>
+
+
+
+    <pre>{{ parentFormGroup.value | json }}</pre>

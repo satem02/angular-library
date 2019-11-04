@@ -1,0 +1,10 @@
+<form class="form" [formGroup]="childTwoFormGroup">
+    <div class="form-element">
+        <mat-form-field>
+            <input matInput placeholder="Country" required [(ngModel)]="model.country" formControlName="country">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="City" [(ngModel)]="model.city" formControlName="city">
+        </mat-form-field>
+    </div>
+</form>

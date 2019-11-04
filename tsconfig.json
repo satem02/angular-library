@@ -1,0 +1,58 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "core": [
+        "dist/core"
+      ],
+      "core/*": [
+        "dist/core/*"
+      ],
+      "ui": [
+        "dist/ui"
+      ],
+      "ui/*": [
+        "dist/ui/*"
+      ],
+      "satem-ui": [
+        "dist/satem-ui"
+      ],
+      "satem-ui/*": [
+        "dist/satem-ui/*"
+      ],
+      "satem-core": [
+        "dist/satem-core"
+      ],
+      "satem-core/*": [
+        "dist/satem-core/*"
+      ],
+      "agenda": [
+        "dist/agenda"
+      ],
+      "agenda/*": [
+        "dist/agenda/*"
+      ]
+    }
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  }
+}

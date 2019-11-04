@@ -1,0 +1,18 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.version-info {
+  font-size: 8pt;
+  float: right;
+}
+
+.groupForm{
+  border: 1px solid #d3d3d3; 
+}
+
+.groupFormTitle{
+  background: rgba(0,0,0,.03);
+  padding: 16px;
+  font-size: 21px;
+  line-height: 32px;
+  margin-bottom: 5px;
+}

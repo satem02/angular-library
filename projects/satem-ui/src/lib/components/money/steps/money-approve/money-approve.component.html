@@ -1,0 +1,9 @@
+<div class="groupForm">
+    <p>money-approve works!</p>
+</div>
+<div class="form-element">
+    <button class="btn btn-primary" (click)="previousButtonClicked()">{{ 'BTN.BACK' | translate}}</button>
+
+    <button class="btn btn-primary" [disabled]="false"
+        (click)="nextButtonClicked()">{{ 'BTN.NEXT' | translate}}</button>
+</div>

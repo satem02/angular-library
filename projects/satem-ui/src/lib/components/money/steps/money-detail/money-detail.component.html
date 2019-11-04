@@ -1,0 +1,67 @@
+<div class="groupForm">
+    <div class="groupFormTitle">{{ 'STEP.DETAIL' | translate}}
+    </div>
+    <div class="container">
+        <form class="form" [formGroup]="moneyDetailFormGroup">
+            <div class="form-element">
+                <mat-form-field>
+                    <input [disabled]="false" type="text" matInput placeholder="Emailaddress" required [(ngModel)]="model.email"
+                        formControlName="email">
+                </mat-form-field>
+                <mat-form-field>
+                    <input [disabled]="true" matInput placeholder="Name" [(ngModel)]="model.name" formControlName="name">
+                </mat-form-field>
+            </div>
+
+
+            <div class="form-element">
+                <mat-form-field>
+                    <mat-label>Sender</mat-label>
+                    <mat-select [(ngModel)]="model.senderUser" formControlName="senderUser" placeholder="senderUser">
+                        <mat-option *ngFor="let user of (sender$ | async)" [value]="user">
+                            {{user.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="form-element">
+                <mat-form-field>
+                    <mat-label>Receiver</mat-label>
+                    <mat-select [(ngModel)]="model.receiverUser" formControlName="receiverUser"
+                        placeholder="receiverUser">
+                        <mat-option *ngFor="let user of (receiver$ | async)" [value]="user">
+                            {{user.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+
+            <div class="form-element">
+                <mat-form-field>
+                    <input type="number" matInput placeholder="Amount" required [(ngModel)]="model.amount"
+                        formControlName="amount" >
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Currency Type</mat-label>
+                    <mat-select [(ngModel)]="model.currencyType" formControlName="currencyType"
+                        placeholder="currencyType">
+                        <mat-option *ngFor="let currency of (currencyTypes$ | async)" [value]="currency">
+                            {{currency.value}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+
+            <div class="form-element">
+                <button class="btn btn-primary" (click)="previousButtonClicked()">{{ 'BTN.BACK' | translate}}</button>
+
+                <button class="btn btn-primary" [disabled]="!moneyDetailFormGroup.valid"
+                    (click)="nextButtonClicked()">{{ 'BTN.NEXT' | translate}}</button>
+            </div>
+        </form>
+
+    </div>

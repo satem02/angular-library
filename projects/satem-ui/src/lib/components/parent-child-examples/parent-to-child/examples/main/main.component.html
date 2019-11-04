@@ -1,0 +1,26 @@
+<div class="groupForm">
+    <div class="groupFormTitle">{{ 'STEP.REQUEST' | translate}}
+    </div>
+    <div class="container">
+        <form class="form" [formGroup]="mainFormGroup">
+
+            <div class="form-element">
+                <mat-form-field>
+                    <input matInput placeholder="Project Name" required [(ngModel)]="model.projectName" formControlName="projectName">
+                </mat-form-field>
+            </div>
+
+            <satem-ui-address-info [childPropertyName]="'address'" [parentFormGroup]="mainFormGroup"></satem-ui-address-info>
+            <satem-ui-contact-info [childPropertyName]="'contact'" [parentFormGroup]="mainFormGroup"></satem-ui-contact-info>
+            <satem-ui-customer-info [childPropertyName]="'customer'" [parentFormGroup]="mainFormGroup" ></satem-ui-customer-info>
+        
+            <div class="form-element">
+                <button class="btn btn-primary" [disabled]="!mainFormGroup.valid"
+                    (click)="nextButtonClicked()">{{ 'BTN.NEXT' | translate}}</button>
+            </div>
+        </form>
+
+    </div>
+
+
+    <pre>{{ mainFormGroup.value | json }}</pre>

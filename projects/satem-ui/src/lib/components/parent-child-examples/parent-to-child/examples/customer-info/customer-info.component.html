@@ -1,0 +1,11 @@
+<form class="form" [formGroup]="customerFormGroup">
+
+    <div class="form-element">
+        <mat-form-field>
+            <input matInput placeholder="name" required [(ngModel)]="model.name" formControlName="name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="surName" [(ngModel)]="model.surName" formControlName="surName">
+        </mat-form-field>
+    </div>
+</form>

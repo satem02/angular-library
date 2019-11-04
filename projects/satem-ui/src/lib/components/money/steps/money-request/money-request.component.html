@@ -1,0 +1,71 @@
+<satem-ui-user-info  (onFormGroupChange)="onFormGroupChangeEvent($event)" ></satem-ui-user-info>
+
+<div class="groupForm">
+    <div class="groupFormTitle">{{ 'STEP.REQUEST' | translate}}
+    </div>
+    <div class="container">
+        <form class="form" [formGroup]="moneyRequestFormGroup">
+
+            <div class="form-element">
+                <mat-form-field>
+                    <input matInput placeholder="Emailaddress" required [(ngModel)]="model.email"
+                        formControlName="email">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Name" [(ngModel)]="model.name" formControlName="name">
+                </mat-form-field>
+            </div>
+
+
+            <div class="form-element">
+                <mat-form-field>
+                    <mat-label>Sender</mat-label>
+                    <mat-select [(ngModel)]="model.senderUser" formControlName="senderUser" placeholder="senderUser">
+                        <mat-option *ngFor="let user of (sender$ | async)" [value]="user">
+                            {{user.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="form-element">
+                <mat-form-field>
+                    <mat-label>Receiver</mat-label>
+                    <mat-select [(ngModel)]="model.receiverUser" formControlName="receiverUser"
+                        placeholder="receiverUser">
+                        <mat-option *ngFor="let user of (receiver$ | async)" [value]="user">
+                            {{user.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+
+            <div class="form-element">
+                <mat-form-field>
+                    <input type="number" matInput placeholder="Amount" required [(ngModel)]="model.amount"
+                        formControlName="amount">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Currency Type</mat-label>
+                    <mat-select [(ngModel)]="model.currencyType" formControlName="currencyType"
+                        placeholder="currencyType">
+                        <mat-option *ngFor="let currency of (currencyTypes$ | async)" [value]="currency">
+                            {{currency.value}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+<!-- Normalde  && getChildForms().valid buna gerek olmaması gerekmektedir. Ancak ts tarafında child formlar register olmuyor. -->
+            <div class="form-element">
+                <button class="btn btn-primary" [disabled]="!(moneyRequestFormGroup.valid && getChildForms().valid)"
+                    (click)="nextButtonClicked()">{{ 'BTN.NEXT' | translate}}</button>
+            </div>
+        </form>
+
+    </div>
+
+    
+ <pre>{{ moneyRequestFormGroup.value | json }}</pre>

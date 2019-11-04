@@ -1,0 +1,20 @@
+<div class="groupForm">
+    <div class="groupFormTitle">Kullanıcı Bilgileri
+    </div>
+    <div class="container">
+        <form class="form" [formGroup]="userInfoFormGroup">
+
+            <div class="form-element">
+                <mat-form-field>
+                    <input matInput formControlName="userName" placeholder="Emailaddress"
+                        [(ngModel)]="userModel.userName" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput formControlName="password" placeholder="Name" [(ngModel)]="userModel.password">
+                </mat-form-field>
+            </div>
+        </form>
+    </div>
+</div>
+
+ <pre>{{ userInfoFormGroup.value | json }}</pre>
