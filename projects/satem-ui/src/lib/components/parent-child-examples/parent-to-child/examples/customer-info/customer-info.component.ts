@@ -1,6 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectorRef } from "@angular/core";
 import { ChildBaseComponent } from "../../base/child-base-component";
-import { FormGroup, FormBuilder } from "@angular/forms";
 import { UserInfo } from "../../models";
 
 @Component({
@@ -10,11 +9,15 @@ import { UserInfo } from "../../models";
 })
 export class CustomerInfoComponent extends ChildBaseComponent
   implements OnInit {
-  customerFormGroup: FormGroup;
   model: UserInfo = new UserInfo();
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private cdRef: ChangeDetectorRef) {
     super();
+  }
+  
+  ngAfterViewInit() {
+    this.cdRef.detectChanges();
   }
 
   ngOnInit() {
@@ -22,11 +25,6 @@ export class CustomerInfoComponent extends ChildBaseComponent
   }
 
   createForm() {
-    this.customerFormGroup = this.formBuilder.group({
-      name: [],
-      surName: []
-    });
-    // parent forma ekleme metodu . base classdan geliyor.
-    this.addGroupToParent(this.customerFormGroup);
+    this.addGroupToControl(this.model);
   }
 }
