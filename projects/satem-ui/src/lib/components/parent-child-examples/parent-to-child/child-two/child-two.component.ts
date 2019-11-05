@@ -26,6 +26,6 @@ export class ChildTwoComponent extends ChildBaseComponent implements OnInit {
       country: [],
       city: []
     });
-    this.addGroupToParent(this.childTwoFormGroup);
+    this.addGroupToParentForm(this.childTwoFormGroup);
   }
 }
