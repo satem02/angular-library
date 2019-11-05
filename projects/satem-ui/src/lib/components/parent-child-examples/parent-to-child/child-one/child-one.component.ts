@@ -27,6 +27,6 @@ export class ChildOneComponent extends ChildBaseComponent implements OnInit {
       phone: []
     });
     // parent forma ekleme metodu . base classdan geliyor.
-    this.addGroupToParent(this.childOneFormGroup);
+    this.addGroupToParentForm(this.childOneFormGroup);
   }
 }
