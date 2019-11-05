@@ -27,6 +27,6 @@ export class ContactInfoComponent extends ChildBaseComponent implements OnInit {
       phone: []
     });
     // parent forma ekleme metodu . base classdan geliyor.
-    this.addGroupToParent(this.contactFormGroup);
+    this.addGroupToParentForm(this.contactFormGroup);
   }
 }
