@@ -27,6 +27,6 @@ export class AddressInfoComponent extends ChildBaseComponent implements OnInit {
       city: []
     });
     // parent forma ekleme metodu . base classdan geliyor.
-    this.addGroupToParent(this.addressFormGroup);
+    this.addGroupToParentForm(this.addressFormGroup);
   }
 }
